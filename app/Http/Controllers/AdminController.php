@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -28,7 +30,12 @@ class AdminController extends Controller
     {
         $id = Auth::user()->id;
         $adminData = User::find($id);
-        return view('admin.admin_profile', compact('adminData'));
+        $lastUpdate = auth()->user()->updated_at;
+        $lastUpdate = Carbon::parse($lastUpdate);
+        $currentTime = Carbon::now();
+        $timeDifference = $currentTime->diffForHumans($lastUpdate);
+
+        return view('admin.admin_profile', compact('adminData','timeDifference'));
     }
 
     public function edit()
@@ -61,5 +68,31 @@ class AdminController extends Controller
     );
         return redirect()->route('admin.profile')->with($notification);
 
+    }
+
+    public function ChangePassword()
+    {
+        return view('admin.admin_change_password');
+    }
+
+    public function UpdatePassword(Request $request)
+    {
+        $validateData = $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required',
+            'confirm_password' => 'required|same:new_password',
+        ]);
+        $hashedPassword = Auth::user()->password;
+        if (Hash::check($request->old_password,$hashedPassword)){
+            $user = User::find(Auth::id());
+            $user->password = bcrypt($request->new_password);
+            $user->save();
+
+            session()->flash('message','Password Updated Successfully');
+            return redirect()->back();
+        }else{
+            session()->flash('message','Old Password İs not match');
+            return redirect()->back();
+        }
     }
 }

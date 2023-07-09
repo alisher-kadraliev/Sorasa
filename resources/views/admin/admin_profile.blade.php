@@ -13,7 +13,7 @@
                     <hr>
                     <a href="{{route('admin.profile.edit',$adminData->id)}}" class="btn btn-info btn-rounded waves-effect waves-light my-3">Edit Profile</a>
                     <p class="card-text">
-                        <small class="text-muted">Last updated {{$adminData->updated_at->format('d/m')}}</small>
+                        <small class="text-muted">Last updated {{$timeDifference}}</small>
                     </p>
                 </div>
             </div>

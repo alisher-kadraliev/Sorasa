@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
 Route::get('/dashboard', function () {
@@ -36,5 +38,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'profiles'], function () {
         Route::get('/{profile}/edit', [AdminController::class, 'edit'])->name('admin.profile.edit');
         Route::put('/{profile}/', [AdminController::class, 'upload'])->name('admin.profile.upload');
+        Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name('admin.profile.change.password');
+        Route::put('/update/password', [AdminController::class, 'UpdatePassword'])->name('admin.profile.update.password');
     });
+});
+Route::controller(HomeSliderController::class)->group(function () {
+    Route::get('/home/slide', 'HomeSlider')->name('home.slide');
+    Route::put('/home/slide', 'HomeSliderUpdate')->name('home.slide.update');
+});
+Route::controller(AboutController::class)->group(function () {
+    Route::get('/about', 'index')->name('about');
+    Route::put('/about', 'update')->name('about.update');
 });

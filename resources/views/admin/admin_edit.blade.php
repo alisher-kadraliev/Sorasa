@@ -10,6 +10,15 @@
                 <div class="card-body">
 
                     <h4 class="card-title">Edit Profile</h4>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('admin.profile.upload', $editData->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('put')
