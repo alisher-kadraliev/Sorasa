@@ -1,7 +1,4 @@
 @extends('frontend.main_master')
-
-
-
 @section('component')
     <!-- banner-area -->
 @include('frontend.home_all.home_slide')

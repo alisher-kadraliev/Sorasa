@@ -12,7 +12,6 @@
             </div>
             <div class="mt-3">
                 <h4 class="font-size-16 mb-1">{{ $adminData->name }} {{$adminData->username}}</h4>
-                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> Online</span>
             </div>
         </div>
 
@@ -42,7 +41,9 @@
                         <span>About Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('about') }}">About Page</a></li>
+                        <li><a href="{{  route('about.main')  }}">About Page</a></li>
+                        <li><a href="{{ route('about.multi.image') }}">About Multi Image</a></li>
+                        <li><a href="{{ route('all.multi.image') }}">All Multi Image</a></li>
                     </ul>
                 </li>
 

@@ -17,10 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -46,7 +42,14 @@ Route::controller(HomeSliderController::class)->group(function () {
     Route::get('/home/slide', 'HomeSlider')->name('home.slide');
     Route::put('/home/slide', 'HomeSliderUpdate')->name('home.slide.update');
 });
-Route::controller(AboutController::class)->group(function () {
-    Route::get('/about', 'index')->name('about');
-    Route::put('/about', 'update')->name('about.update');
-});
+
+Route::get('/', [AboutController::class,'Home'])->name('index');
+Route::get('/all/multi/image', [AboutController::class,'AllMultiImage'])->name('all.multi.image');
+Route::put('/about', [AboutController::class,'update'])->name('about.update');
+Route::get('/about', [AboutController::class,'HomeAbout'])->name('about.home');
+Route::get('/about/multi/image', [AboutController::class,'AboutMultiImage'])->name('about.multi.image');
+Route::get('/about/multi/image{id}', [AboutController::class,'EditMultiImage'])->name('edit.multi.image');
+Route::put('/images', [AboutController::class,'AboutMultiImageStore'])->name('image.store');
+Route::get('/about/page', [AboutController::class, 'index'])->name('about.main');
+Route::put('/about/multi/image/', [AboutController::class,'UpdateMultiImage'])->name('update.multi.image');
+Route::get('/delete/multi/image/{id}', [AboutController::class,'DestroyMultiImage'])->name('delete.multi.image');
