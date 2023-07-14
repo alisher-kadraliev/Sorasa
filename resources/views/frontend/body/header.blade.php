@@ -14,25 +14,26 @@
                                 <ul class="navigation">
                                     <li class="{{ request()->routeIs('index') ? 'active' : '' }}"><a href="{{route('index')}}">Home</a></li>
                                     <li class="{{ request()->routeIs('about.home') ? 'active' : '' }}"><a  href="{{route('about.home')}}">About</a></li>
-                                    <li><a href="services-details.html">Services</a></li>
                                     <li class="menu-item-has-children"><a href="#">Portfolio</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                        </ul>
+
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Our Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Our News</a></li>
-                                            <li><a href="blog-details.html">News Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">contact me</a></li>
+                                    <li class="menu-item-has-children"><a href="{{route('home.blog')}}">Our Blog</a>
+                                    @if(auth()->check())
+                                        <li class="menu-item-has-children">
+                                            <a href="{{ route('login') }}">Admin</a>
+                                        </li>
+                                    @else
+                                        <li class="menu-item-has-children">
+                                            <a href="{{ route('login') }}">Login</a>
+                                        </li>
+                                        @endif
+                                    <li><a href="{{route('contact')}}">contact me</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
-                                <a href="contact.html" class="btn">Contact me</a>
+                                <a href=" {{route('contact')}}" class="btn">Contact me</a>
                             </div>
+
                         </nav>
                     </div>
                     <!-- Mobile Menu  -->
@@ -46,15 +47,7 @@
                             <div class="menu__outer">
                                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                             </div>
-                            <div class="social-links">
-                                <ul class="clearfix">
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-youtube"></span></a></li>
-                                </ul>
-                            </div>
+
                         </nav>
                     </div>
                     <div class="menu__backdrop"></div>

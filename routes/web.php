@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\BlogCategoryController;
+use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +57,37 @@ Route::put('/images', [AboutController::class,'AboutMultiImageStore'])->name('im
 Route::get('/about/page', [AboutController::class, 'index'])->name('about.main');
 Route::put('/about/multi/image/', [AboutController::class,'UpdateMultiImage'])->name('update.multi.image');
 Route::get('/delete/multi/image/{id}', [AboutController::class,'DestroyMultiImage'])->name('delete.multi.image');
+Route::group(['prefix' => 'portfolio'], function () {
+    Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
+    Route::get('/create', [PortfolioController::class, 'create'])->name('portfolio.create');
+    Route::put('/update', [PortfolioController::class, 'update'])->name('portfolio.update');
+    Route::put('/', [PortfolioController::class, 'reupdate'])->name('portfolio.reupdate');
+    Route::get('/edit/{portfolio}', [PortfolioController::class, 'edit'])->name('portfolio.edit');
+    Route::get('/delete/{id}', [PortfolioController::class, 'delete'])->name('portfolio.delete');
+    Route::get('/details/{id}', [PortfolioController::class, 'details'])->name('portfolio.details');
+});
+Route::controller(BlogCategoryController::class)->group(function () {
+    Route::get('/blog_category', 'index')->name('blog_category.index');
+    Route::get('/blog_category/create', 'create')->name('blog_category.create');
+    Route::post('/blog_category', 'store')->name('blog_category.store');
+    Route::get('/blog_category/edit/{id}', 'edit')->name('blog_category.edit');
+    Route::put('/blog_category/{id}', 'update')->name('blog_category.update');
+    Route::get('/blog_category/delete/{id}', 'delete')->name('blog_category.delete');
+});
+
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/blogs', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('/create', [BlogController::class,'create'])->name('blog.create');
+    Route::post('/', [BlogController::class,'store'])->name('blog.store');
+    Route::get('/edit/{id}', [BlogController::class,'edit'])->name('blog.edit');
+    Route::put('/{id}', [BlogController::class,'update'])->name('blog.update');
+    Route::get('/delete/{id}', [BlogController::class,'delete'])->name('blog.delete');
+    Route::get('/single_blog/{id}', [BlogController::class,'single_blog'])->name('single_blog');
+});
+Route::get('/category/post/{id}', [BlogController::class,'CategoryPost'])->name('category.post');
+Route::get('/blog', [BlogController::class, 'homeBlog'])->name('home.blog');
+Route::group(['prefix' => 'contact'], function () {
+    Route::get('/', [ContactController::class, 'contact'])->name('contact');
+    Route::post('/', [ContactController::class, 'store'])->name('contact.store');
+});
+

@@ -57,7 +57,6 @@
                                 </div>
                             </div>
                             <p class="desc">{{$about->short_description}}</p>
-                            <a href="about.html" class="btn">Download my resume</a>
                         </div>
                     </div>
                 </div>
@@ -77,18 +76,7 @@
                                             role="tab" aria-controls="skills" aria-selected="false">Skills
                                     </button>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="awards-tab" data-bs-toggle="tab"
-                                            data-bs-target="#awards" type="button"
-                                            role="tab" aria-controls="awards" aria-selected="false">awards
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="education-tab" data-bs-toggle="tab"
-                                            data-bs-target="#education" type="button"
-                                            role="tab" aria-controls="education" aria-selected="false">education
-                                    </button>
-                                </li>
+
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="about" role="tabpanel"
@@ -102,69 +90,39 @@
                                                 <div class="about__skill__item">
                                                     <h5 class="title">Communication</h5>
                                                     <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 70%;"
+                                                        <div class="progress-bar" role="progressbar" style="width: 60%;"
                                                              aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="percentage">70%</span></div>
+                                                            <span class="percentage">60%</span></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="about__skill__item">
-                                                    <h5 class="title">Brain Storming</h5>
+                                                    <h5 class="title">Laravel</h5>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 60%;"
+                                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="percentage">60%</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="about__skill__item">
+                                                    <h5 class="title">Php</h5>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" style="width: 90%;"
-                                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
                                                             <span class="percentage">90%</span></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="about__skill__item">
-                                                    <h5 class="title">Resourcefulness</h5>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
-                                                             aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="percentage">50%</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="about__skill__item">
-                                                    <h5 class="title">Figma</h5>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 65%;"
-                                                             aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="percentage">65%</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="about__skill__item">
-                                                    <h5 class="title">Analytical Abilities</h5>
+                                                    <h5 class="title">Javascript</h5>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" style="width: 80%;"
-                                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                                             aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
                                                             <span class="percentage">80%</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="about__skill__item">
-                                                    <h5 class="title">Skeatch</h5>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 45%;"
-                                                             aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="percentage">45%</span></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="about__skill__item">
-                                                    <h5 class="title">User Research</h5>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 55%;"
-                                                             aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="percentage">55%</span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -172,9 +130,9 @@
                                                 <div class="about__skill__item">
                                                     <h5 class="title">Adobe Tools</h5>
                                                     <div class="progress">
-                                                        <div class="progress-bar" role="progressbar" style="width: 85%;"
+                                                        <div class="progress-bar" role="progressbar" style="width: 50%;"
                                                              aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="percentage">85%</span></div>
+                                                            <span class="percentage">50%</span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -459,10 +417,7 @@
                                         <i class="fas fa-quote-left"></i>
                                     </div>
                                     <div class="testimonial__content">
-                                        <p>We are motivated by the satisfaction of our clients. Put your trust in us
-                                            &share in our H.Spond Asset Management is made up of a team of expert,
-                                            committed and experienced people with a passion for financial markets. Our
-                                            goal is to achieve continuous.</p>
+                                        <p>Be first comment client</p>
                                         <div class="testimonial__avatar">
                                             <span>WPBakery/ uSA</span>
                                             <div class="testi__avatar__img">
@@ -472,24 +427,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="testimonial__item">
-                                    <div class="testimonial__icon">
-                                        <i class="fas fa-quote-left"></i>
-                                    </div>
-                                    <div class="testimonial__content">
-                                        <p>We are motivated by the satisfaction of our clients. Put your trust in us
-                                            &share in our H.Spond Asset Management is made up of a team of expert,
-                                            committed and experienced people with a passion for financial markets. Our
-                                            goal is to achieve continuous.</p>
-                                        <div class="testimonial__avatar">
-                                            <span>Adobe Photoshop</span>
-                                            <div class="testi__avatar__img">
-                                                <img src="{{ asset('frontend/assets/img/images/testi_avatar02.png') }}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="testimonial__arrow"></div>
                         </div>
@@ -498,82 +436,58 @@
             </div>
             <div class="testimonial__two__icons">
                 <ul>
-                    <li><img src="{{ asset('frontend/assets/img/icons/testi_shape01.png') }}" alt=""></li>
-                    <li><img src="{{ asset('frontend/assets/img/icons/testi_shape02.png') }}" alt=""></li>
-                    <li><img src="{{ asset('frontend/assets/img/icons/testi_shape03.png') }}" alt=""></li>
-                    <li><img src="{{ asset('frontend/assets/img/icons/testi_shape04.png') }}" alt=""></li>
-                    <li><img src="{{ asset('frontend/assets/img/icons/testi_shape05.png') }}" alt=""></li>
-                    <li><img src="{{ asset('frontend/assets/img/icons/testi_shape06.png') }}" alt=""></li>
+                    @php
+                        $multi = \App\Models\MultiImage::all()
+                    @endphp
+                    @foreach($multi as $index => $multis)
+                        @if($index < 6)
+                        <li><img src="{{asset($multis->multi_image)}}" alt=""></li>
+                        @else
+                            @break
+                        @endif
+                    @endforeach
                 </ul>
             </div>
         </section>
         <!-- testimonial-area-end -->
-
+        @php
+            $portfolio = \App\Models\Portfolio::latest()->get();
+        @endphp
         <!-- blog-area -->
         <section class="blog blog__style__two">
             <div class="container">
                 <div class="row gx-0 justify-content-center">
+                    @foreach($portfolio as $index =>  $item)
+                        @if($index < 3)
                     <div class="col-lg-4 col-md-6 col-sm-9">
-                        <div class="blog__post__item">
+                        <div class="blog__post__item mx-2">
                             <div class="blog__post__thumb">
-                                <a href="blog-details.html"><img
-                                        src="{{ asset('frontend/assets/img/blog/blog_post_thumb01.jpg') }}" alt=""></a>
+                                <a href="{{route('portfolio.details',$item->id)}}"><img
+                                        src="{{ asset($item->img) }}" alt=""></a>
                                 <div class="blog__post__tags">
-                                    <a href="blog.html">Story</a>
+                                    <a href="{{route('portfolio.details',$item->id)}}">{{$item->title}}</a>
                                 </div>
                             </div>
                             <div class="blog__post__content">
-                                <span class="date">13 january 2021</span>
-                                <h3 class="title"><a href="blog-details.html">Facebook design is dedicated to what's new
-                                        in design</a></h3>
-                                <a href="blog-details.html" class="read__more">Read mORe</a>
+                                <h3 class="title"><a href="{{route('portfolio.details',$item->id)}}">{{$item->name}}</a></h3>
+                                <a href="{{route('portfolio.details',$item->id)}}" class="read__more">Read mORe</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-9">
-                        <div class="blog__post__item">
-                            <div class="blog__post__thumb">
-                                <a href="blog-details.html"><img
-                                        src="{{ asset('frontend/assets/img/blog/blog_post_thumb02.jpg') }}" alt=""></a>
-                                <div class="blog__post__tags">
-                                    <a href="blog.html">Social</a>
-                                </div>
-                            </div>
-                            <div class="blog__post__content">
-                                <span class="date">13 january 2021</span>
-                                <h3 class="title"><a href="blog-details.html">Make communication Fast and
-                                        Effectively.</a></h3>
-                                <a href="blog-details.html" class="read__more">Read mORe</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-9">
-                        <div class="blog__post__item">
-                            <div class="blog__post__thumb">
-                                <a href="blog-details.html"><img
-                                        src="{{ asset('frontend/assets/img/blog/blog_post_thumb03.jpg') }}" alt=""></a>
-                                <div class="blog__post__tags">
-                                    <a href="blog.html">Work</a>
-                                </div>
-                            </div>
-                            <div class="blog__post__content">
-                                <span class="date">13 january 2021</span>
-                                <h3 class="title"><a href="blog-details.html">How to increase your productivity at work
-                                        - 2021</a></h3>
-                                <a href="blog-details.html" class="read__more">Read mORe</a>
-                            </div>
-                        </div>
-                    </div>
+                        @else
+                            @break
+                        @endif
+                    @endforeach
                 </div>
                 <div class="blog__button text-center">
-                    <a href="blog.html" class="btn">more blog</a>
+                    <a href="{{route('blog.index')}}" class="btn">more blog</a>
                 </div>
+
             </div>
         </section>
         <!-- blog-area-end -->
 
-        <!-- contact-area -->
-        <section class="homeContact">
+        <section class="homeContact homeContact__style__two">
             <div class="container">
                 <div class="homeContact__wrap">
                     <div class="row">
@@ -583,18 +497,17 @@
                                 <h2 class="title">Any questions? Feel free <br> to contact</h2>
                             </div>
                             <div class="homeContact__content">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered alteration in some form</p>
-                                <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
+                                <h2 class="mail"><a href="#">alisherkadraliev@gmail.com</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="homeContact__form">
-                                <form action="#">
-                                    <input type="text" placeholder="Enter name*">
-                                    <input type="email" placeholder="Enter mail*">
-                                    <input type="number" placeholder="Enter number*">
-                                    <textarea name="message" placeholder="Enter Massage*"></textarea>
+                                <form action="{{route('contact.store')}}" method="post">
+                                    @csrf
+                                    <input type="text" name="name" id="name" placeholder="Enter name*">
+                                    <input type="email" name="email" id="email"  placeholder="Enter mail*">
+                                    <input type="number" name="phone" id="phone" placeholder="Enter number*">
+                                    <textarea name="message" id="message"  placeholder="Enter Massage*"></textarea>
                                     <button type="submit">Send Message</button>
                                 </form>
                             </div>
@@ -603,7 +516,6 @@
                 </div>
             </div>
         </section>
-        <!-- contact-area-end -->
 
     </main>
 @endsection
